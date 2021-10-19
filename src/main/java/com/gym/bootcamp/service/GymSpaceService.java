@@ -1,17 +1,25 @@
 package com.gym.bootcamp.service;
+
+import com.gym.bootcamp.exception.GymSpaceNotFoundException;
 import com.gym.bootcamp.repository.GymSpaceRepository;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
+
 @Service
 public class GymSpaceService {
+
     private final GymSpaceRepository gymSpaceRepository;
+
     public GymSpaceService(GymSpaceRepository gymSpaceRepository) {
         this.gymSpaceRepository = gymSpaceRepository;
     }
+
     //List of all gym spaces
     public List<GymSpace> findAll() {
         return gymSpaceRepository.findAll();
     }
+
     //Find space by name
     public GymSpace getGymSpaceByName(String name) {
         List<GymSpace> allGymSpaces = gymSpaceRepository.findAll();
@@ -22,9 +30,10 @@ public class GymSpaceService {
         }
         return null;
     }
+
     //Update space name
     public GymSpace updateName(Long id, String name) {
-        GymSpace gymSpace = gymSpaceRepository.findById(id).orElseThro(() -> new GymSpaceNotFound("Space desn't exists.");
+        GymSpace gymSpace = gymSpaceRepository.findById(id).orElseThro(() -> new GymSpaceNotFoundException("Space desn't exists.");
         gymSpace.setName(name);
         return gymSpaceRepository.save(name);
     }
