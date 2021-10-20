@@ -4,18 +4,19 @@ import com.gym.bootcamp.model.Member;
 import com.gym.bootcamp.repository.MemberRepository;
 import com.gym.bootcamp.request.CreateMemberRQ;
 import com.gym.bootcamp.request.UpdateMemberAgeRQ;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
+
 
 @Service
 public class MemberService {
 
-    @Autowired
     MemberRepository memberRepository;
 
+    public MemberService(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
 
     //Find all members
     public List<Member> findAll() {
@@ -23,8 +24,8 @@ public class MemberService {
     }
 
     //Find by Id
-    public Member getMemberById(Long id) {
-        return memberRepository.findById(id);
+    public Member getMemberById(String id) {
+        return memberRepository.findById(id).get();
     }
 
     //Find by Name
@@ -50,15 +51,14 @@ public class MemberService {
         return newMemberList;
 
         //Update Age
-        public Member updateMember(Long id, UpdateMemberAgeRQ updateMemberAgeRQ){
+        public Member updateMember(String id, UpdateMemberAgeRQ updateMemberAgeRQ){
             Member memberToEdit = getMemberById(id);
             memberToEdit.setAge(updateMemberAgeRQ.getAge());
-
             return memberToEdit;
         }
 
         //Delete member by Id
-        public void deleteById (Long id){
+        public void deleteMemberById(String id){
             this.getMemberById(id);
             memberRepository.deleteById(id);
         }
