@@ -20,7 +20,6 @@ import java.security.SecureRandom;
 @Document
 public class GymClass {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private String id;
     private String name;
     @Enumerated

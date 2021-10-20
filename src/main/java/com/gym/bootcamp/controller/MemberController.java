@@ -1,4 +1,4 @@
-package com.gym.bootcamp.Controller;
+package com.gym.bootcamp.controller;
 
 import com.gym.bootcamp.model.Member;
 import com.gym.bootcamp.request.CreateMemberRQ;
@@ -21,7 +21,7 @@ public class MemberController {
         this.memberService = memberService;
     }
 
-    //Get all Members
+    //Get all members
     @GetMapping("/Members")
     public List<Member> getMembers() {
         return memberService.findAll();
@@ -33,20 +33,26 @@ public class MemberController {
         return memberService.getMemberById(id);
     }
 
+    //Get member by name
+    @GetMapping(value = "/Members/{name}")
+    public Member getMemberByName(@PathVariable(value = "name") @Valid String name){
+        return memberService.getMemberByName(name);
+    }
+
     //Create member
-    @PostMapping(value = "/Member", consumes = "application/json", produces = "application/json")
+    @PostMapping(value = "/Members", consumes = "application/json", produces = "application/json")
     public List<Member> createMembers(@RequestBody @Valid List<CreateMemberRQ> createMemberRQ) {
         return memberService.createMembers(createMemberRQ);
     }
 
-       //Update member
-    @PutMapping(value = "/Member-update/{id}", consumes = "application/json", produces = "application/json")
+    //Update member
+    @PutMapping(value = "/Members-update/{id}", consumes = "application/json", produces = "application/json")
     public Member updateMemberAge(@PathVariable(value = "id") String id, @RequestBody UpdateMemberAgeRQ updateMemberAgeRQ) {
-        return memberService.upadateMember(id, updateMemberAgeRQ.getAge());
+        return memberService.updateMember(id,updateMemberAgeRQ.getAge());
     }
 
     //Delete member
-    @DeleteMapping(value = "/Member-delete/{id}")
+    @DeleteMapping(value = "/Members-delete/{id}")
     public void deleteById(@PathVariable(value = "id") String id) {
         memberService.deleteById(id);
     }

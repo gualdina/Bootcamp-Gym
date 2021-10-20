@@ -51,19 +51,15 @@ public class MemberService {
         return newMemberList;
     }
 
-    //Delete member by Id
-    public void deleteMemberById(String id) {
-        this.getMemberById(id);
-        memberRepository.deleteById(id);
-    }
-
-    public Member upadateMember(String id, int age) {
+    //Update member's age
+     public Member updateMember(String id, int age) {
         Member memberToUpdate = this.getMemberById(id);
         memberToUpdate.setAge(age);
         memberRepository.save(memberToUpdate);
         return memberToUpdate;
     }
 
+    //Delete by id
     public void deleteById(String id) {
         this.getMemberById(id);
         memberRepository.deleteById(id);

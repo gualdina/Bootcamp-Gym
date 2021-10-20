@@ -14,7 +14,6 @@ import javax.persistence.GenerationType;
 @Document
 public class Member {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private String id;
     private String name;
     private int age;

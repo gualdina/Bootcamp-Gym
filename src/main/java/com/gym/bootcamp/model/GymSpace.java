@@ -18,7 +18,6 @@ import javax.persistence.Id;
 @Document
 public class GymSpace {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private String  id;
     private String name;
     private int area;
