@@ -6,8 +6,7 @@ import org.springframework.stereotype.Repository;
 import java.lang.reflect.Member;
 
 @Repository
-public interface GymClassRepository extends MongoRepository<Member, Long>{
-        Optional<GymClass> findAuthorByFirstName(String firstName);
+public interface GymClassRepository extends MongoRepository<GymClass, Long>{
     }
 
 }
