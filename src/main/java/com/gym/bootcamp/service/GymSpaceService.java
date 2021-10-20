@@ -1,8 +1,6 @@
 package com.gym.bootcamp.service;
 
-import com.gym.bootcamp.exception.GymSpaceNotFoundException;
 import com.gym.bootcamp.model.GymSpace;
-import com.gym.bootcamp.model.Member;
 import com.gym.bootcamp.repository.GymSpaceRepository;
 import org.springframework.stereotype.Service;
 
