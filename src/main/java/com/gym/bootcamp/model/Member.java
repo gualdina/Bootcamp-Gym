@@ -6,6 +6,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 @Getter
+@Setter
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor

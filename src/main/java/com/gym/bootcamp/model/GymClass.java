@@ -12,6 +12,7 @@ import javax.persistence.GenerationType;
 import java.security.SecureRandom;
 
 @Getter
+@Setter
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor

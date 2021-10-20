@@ -3,8 +3,8 @@ package com.gym.bootcamp.service;
 import com.gym.bootcamp.model.Member;
 import com.gym.bootcamp.repository.MemberRepository;
 import com.gym.bootcamp.request.CreateMemberRQ;
-import com.gym.bootcamp.request.UpdateMemberAgeRQ;
 import org.springframework.stereotype.Service;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,19 +49,23 @@ public class MemberService {
             newMemberList.add(newMember);
         }
         return newMemberList;
+    }
 
-        //Update Age
-        public Member updateMember(String id, UpdateMemberAgeRQ updateMemberAgeRQ){
-            Member memberToEdit = getMemberById(id);
-            memberToEdit.setAge(updateMemberAgeRQ.getAge());
-            return memberToEdit;
-        }
+    //Delete member by Id
+    public void deleteMemberById(String id) {
+        this.getMemberById(id);
+        memberRepository.deleteById(id);
+    }
 
-        //Delete member by Id
-        public void deleteMemberById(String id){
-            this.getMemberById(id);
-            memberRepository.deleteById(id);
-        }
+    public Member upadateMember(String id, int age) {
+        Member memberToUpdate = this.getMemberById(id);
+        memberToUpdate.setAge(age);
+        memberRepository.save(memberToUpdate);
+        return memberToUpdate;
+    }
 
+    public void deleteById(String id) {
+        this.getMemberById(id);
+        memberRepository.deleteById(id);
     }
 }

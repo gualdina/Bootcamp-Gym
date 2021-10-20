@@ -1,5 +1,14 @@
 package com.gym.bootcamp.request;
 
+
+import lombok.*;
+
+@Getter
+@Setter
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class UpdateMemberAgeRQ {
     private int age;
 }
