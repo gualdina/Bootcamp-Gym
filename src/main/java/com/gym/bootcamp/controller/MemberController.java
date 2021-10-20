@@ -1,5 +1,6 @@
 package com.gym.bootcamp.controller;
 
+import com.gym.bootcamp.exception.NameNotFoundException;
 import com.gym.bootcamp.model.Member;
 import com.gym.bootcamp.request.CreateMemberRQ;
 import com.gym.bootcamp.request.UpdateMemberAgeRQ;
@@ -35,7 +36,7 @@ public class MemberController {
 
     //Get member by name
     @GetMapping(value = "/Members/{name}")
-    public Member getMemberByName(@PathVariable(value = "name") @Valid String name){
+    public Member getMemberByName(@PathVariable(value = "name") @Valid String name) throws NameNotFoundException{
         return memberService.getMemberByName(name);
     }
 

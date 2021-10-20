@@ -3,7 +3,10 @@ package com.gym.bootcamp.service;
 import com.gym.bootcamp.model.Member;
 import com.gym.bootcamp.repository.MemberRepository;
 import com.gym.bootcamp.request.CreateMemberRQ;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,7 +55,7 @@ public class MemberService {
     }
 
     //Update member's age
-     public Member updateMember(String id, int age) {
+    public Member updateMember(String id, int age) {
         Member memberToUpdate = this.getMemberById(id);
         memberToUpdate.setAge(age);
         memberRepository.save(memberToUpdate);

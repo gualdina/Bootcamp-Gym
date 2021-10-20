@@ -5,10 +5,9 @@ import lombok.*;
 
 @Getter
 @Setter
-@ToString
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 public class UpdateMemberAgeRQ {
     private int age;
 }

@@ -4,10 +4,9 @@ import lombok.*;
 
 @Getter
 @Setter
-@ToString
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 public class UpdateGymSpaceNameRQ {
     private String name;
 }
