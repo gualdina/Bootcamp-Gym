@@ -12,6 +12,6 @@ import javax.persistence.Enumerated;
 @Builder
 public class CreateNewClassRQ {
     private String name;
-    //@Enumerated abc
+    //@Enumerated abc123
     private ClassesType type;
 }
