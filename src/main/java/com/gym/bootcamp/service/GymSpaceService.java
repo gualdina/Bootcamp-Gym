@@ -1,6 +1,7 @@
 package com.gym.bootcamp.service;
 
 import com.gym.bootcamp.exception.GymSpaceNotFoundException;
+import com.gym.bootcamp.model.GymSpace;
 import com.gym.bootcamp.repository.GymSpaceRepository;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +13,7 @@ public class GymSpaceService {
     private final GymSpaceRepository gymSpaceRepository;
 
     public GymSpaceService(GymSpaceRepository gymSpaceRepository) {
+        
         this.gymSpaceRepository = gymSpaceRepository;
     }
 
@@ -33,7 +35,7 @@ public class GymSpaceService {
 
     //Update space name
     public GymSpace updateName(Long id, String name) {
-        GymSpace gymSpace = gymSpaceRepository.findById(id).orElseThro(() -> new GymSpaceNotFoundException("Space desn't exists.");
+        GymSpace gymSpace = gymSpaceRepository.findById(id).orElseThrow(() -> new GymSpaceNotFoundException("Space desn't exists.");
         gymSpace.setName(name);
         return gymSpaceRepository.save(name);
     }

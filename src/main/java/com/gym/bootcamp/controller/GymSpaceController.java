@@ -1,5 +1,6 @@
 package com.gym.bootcamp.controller;
 
+import com.gym.bootcamp.model.GymSpace;
 import com.gym.bootcamp.service.GymSpaceService;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
