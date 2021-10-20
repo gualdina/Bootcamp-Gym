@@ -1,5 +1,7 @@
 package com.gym.bootcamp.service;
 
+import com.gym.bootcamp.exception.GymSpaceNotFoundException;
+import com.gym.bootcamp.exception.MemberNotFoundException;
 import com.gym.bootcamp.model.GymSpace;
 import com.gym.bootcamp.repository.GymSpaceRepository;
 import org.springframework.stereotype.Service;
@@ -29,7 +31,7 @@ public class GymSpaceService {
             if (allGymSpaces.get(i).getName() == name)
                 return allGymSpaces.get(i);
         }
-        return null;
+        throw new GymSpaceNotFoundException("Doesn't exist.");
     }
 
     //Update space name

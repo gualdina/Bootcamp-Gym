@@ -5,7 +5,6 @@ import com.gym.bootcamp.model.GymClass;
 import com.gym.bootcamp.repository.GymClassRepository;
 import com.gym.bootcamp.request.CreateNewClassRQ;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 
