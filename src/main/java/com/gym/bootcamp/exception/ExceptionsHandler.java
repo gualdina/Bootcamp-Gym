@@ -22,7 +22,7 @@ public class ExceptionsHandler {
     public HttpErrorResponse handleGenericException(NameNotFoundException exception) {
         return new HttpErrorResponse(
                 404,
-                "Customer Not Found",
+                "Gym Not Found",
                 LocalDateTime.now()
         );
     }

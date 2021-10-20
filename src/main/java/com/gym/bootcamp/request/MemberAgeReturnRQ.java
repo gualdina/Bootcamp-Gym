@@ -1,13 +1,11 @@
 package com.gym.bootcamp.request;
 
 import lombok.*;
-
 @Getter
 @Setter
-@ToString
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 public class MemberAgeReturnRQ {
     private long Id;
     private String name;
