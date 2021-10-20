@@ -17,7 +17,7 @@
 -Classes type (Enumerated)
 
 
-## CLASSES TYPE (Enum)**
+## CLASSES TYPE (Enum)
 
 -Cardio
 
