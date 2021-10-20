@@ -1,6 +1,6 @@
 # Bootcamp-Gym
 
-##MEMBERS
+## MEMBERS
 
 -Id
 
@@ -8,7 +8,7 @@
 
 -Age
 
-##CLASSES
+## CLASSES
 
 -Id
 
@@ -17,7 +17,7 @@
 -Classes type (Enumerated)
 
 
-##CLASSES TYPE (Enum)**
+## CLASSES TYPE (Enum)**
 
 -Cardio
 
@@ -25,7 +25,7 @@
 
 -BodyBuilding
 
-##GYM SPACES
+## GYM SPACES
 
 -Id
 
