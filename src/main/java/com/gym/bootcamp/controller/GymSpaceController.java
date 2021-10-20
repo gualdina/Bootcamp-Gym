@@ -30,7 +30,7 @@ public class GymSpaceController {
 
     //Get by name
     @GetMapping(value = "/GymSpaces/{name}")
-    public GymSpace getGymSpaceByName(@PathVariable(value = "name") @Valid String name) throws GymSpaceNotFoundException {
+    public GymSpace getGymSpaceByName(@PathVariable(value = "name") @Valid String name) {
         return gymSpaceService.getGymSpaceByName(name);
     }
 

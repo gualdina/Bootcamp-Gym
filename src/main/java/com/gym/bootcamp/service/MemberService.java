@@ -1,5 +1,6 @@
 package com.gym.bootcamp.service;
 
+import com.gym.bootcamp.exception.MemberNotFoundException;
 import com.gym.bootcamp.model.Member;
 import com.gym.bootcamp.repository.MemberRepository;
 import com.gym.bootcamp.request.CreateMemberRQ;
@@ -28,8 +29,8 @@ public class MemberService {
 
     //Find by Id
     public Member getMemberById(String id) {
-        return memberRepository.findById(id).get();
-    }
+        return memberRepository.findById(id).orElseThrow(() -> new MemberNotFoundException("Member doesn't exists."));
+            }
 
     //Find by Name
     public Member getMemberByName(String name) {
