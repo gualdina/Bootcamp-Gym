@@ -1,33 +1,33 @@
-### Bootcamp-Gym
+#### Bootcamp-Gym
 
-**MEMBERS**
+##**MEMBERS**
 
-Id
+-Id
 
-Name
+-Name
 
-Age
+-Age
 
-**Classes**
+##**CLASSES**
 
-Id
+-Id
 
-Name
+-Name
 
-Classes type (Enumerated)
+-Classes type (Enumerated)
 
-**Classes Type (Enum)**
+##**CLASSES TYPE (Enum)**
 
-Cardio
+-Cardio
 
-Functional
+-Functional
 
-BodyBuilding
+-BodyBuilding
 
-**Gym Spaces**
+##**GYM SPACES**
 
-Id
+-Id
 
-Name
+-Name
 
-Area(m2)
+-Area(m2)
